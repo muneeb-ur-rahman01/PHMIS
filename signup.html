@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Request access — PHIMS</title>
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="field"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+
+<button class="icon-btn theme-toggle-floating" id="themeFloat" type="button" aria-label="Toggle dark mode">
+  <span id="themeFloatIcon"></span>
+</button>
+
+<main class="auth-shell">
+  <div class="auth-card glass-hero">
+    <section class="auth-side">
+      <div>
+        <div class="wordmark">
+          <span style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,0.22);display:grid;place-items:center;">P</span>
+          PHIMS
+        </div>
+        <h1>Accounts are provisioned by an administrator, not created by anyone who asks.</h1>
+        <p class="lede">Health and case data carries real stakes, so PHIMS doesn't offer open sign-up for government or facility roles. Submit a request and an administrator assigns your permissions and jurisdiction directly.</p>
+      </div>
+      <div class="stamp">
+        Prototype for review — this form does not create an account.<br />
+        To explore the product immediately, sign in with a demo role instead.
+      </div>
+    </section>
+
+    <section class="auth-form-pane">
+      <div>
+        <h2>Request access</h2>
+        <p class="sub">An administrator reviews every request before an account is created.</p>
+      </div>
+
+      <div id="successBanner" class="banner banner-success">
+        <span id="successIcon"></span>
+        <span>Request submitted. An administrator will review it and, if approved, send an invitation to the email you gave.</span>
+      </div>
+
+      <form id="requestForm">
+        <div class="field-row" style="margin-bottom:14px;">
+          <div class="field-group">
+            <label for="fullName">Full name</label>
+            <input id="fullName" type="text" placeholder="Dr. Aisha Farooq" required />
+          </div>
+        </div>
+        <div class="field-group" style="margin-bottom:14px;">
+          <label for="workEmail">Work email</label>
+          <input id="workEmail" type="email" placeholder="you@health.gov.pk" required />
+        </div>
+        <div class="field-group" style="margin-bottom:14px;">
+          <label for="org">Organization or facility</label>
+          <input id="org" type="text" placeholder="DHQ Hospital Narowal" required />
+        </div>
+        <div class="field-group" style="margin-bottom:18px;">
+          <label for="roleWanted">Role you're requesting</label>
+          <select id="roleWanted" required>
+            <option value="" disabled selected>Choose a role…</option>
+          </select>
+        </div>
+        <button type="submit" class="btn btn-primary btn-block" id="submitBtn">Submit request</button>
+      </form>
+
+      <p class="auth-footer-link">Just exploring? <a href="index.html">Sign in with a demo role</a></p>
+    </section>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Sign in — PHIMS</title>
+<meta name="description" content="PHIMS prototype — demo sign-in. Synthetic data only." />
+<link rel="icon" href="data:," />
+<link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+<div class="field"><div class="blob a"></div><div class="blob b"></div><div class="blob c"></div></div>
+
+<button class="icon-btn theme-toggle-floating" id="themeFloat" type="button" aria-label="Toggle dark mode">
+  <span id="themeFloatIcon"></span>
+</button>
+
+<main class="auth-shell">
+  <div class="auth-card glass-hero">
+    <section class="auth-side">
+      <div>
+        <div class="wordmark">
+          <span style="width:30px;height:30px;border-radius:9px;background:rgba(255,255,255,0.22);display:grid;place-items:center;">P</span>
+          PHIMS
+        </div>
+        <h1>A national view of disease trends, facility status, and medicine stock — built for the people who act on it.</h1>
+        <p class="lede">Pick any role below to explore how PHIMS looks from the Ministry of Health down to a single rural health centre.</p>
+      </div>
+      <div class="stamp">
+        Prototype for review — not connected to any real system.<br />
+        All facilities, cases, and figures shown are synthetic demonstration data.
+      </div>
+    </section>
+
+    <section class="auth-form-pane">
+      <div>
+        <h2>Sign in</h2>
+        <p class="sub">Choose a role to explore PHIMS with realistic demo data.</p>
+      </div>
+
+      <div class="demo-box">
+        <strong>Every demo account uses the same password:</strong> PhimsDemo#2026
+        <div class="steps">1. Pick a role below — it fills in the email for you. 2. Select sign in.</div>
+      </div>
+
+      <div id="bannerError" class="banner banner-error">
+        <span id="bannerErrorIcon"></span>
+        <span id="bannerErrorText"></span>
+      </div>
+
+      <form id="credStep">
+        <div class="field-group" style="margin-bottom:14px;">
+          <label for="roleSelect">Explore as</label>
+          <select id="roleSelect" required>
+            <option value="" disabled selected>Choose a role…</option>
+          </select>
+        </div>
+        <div class="field-group" style="margin-bottom:14px;">
+          <label for="email">Email</label>
+          <input id="email" type="email" placeholder="Select a role above" autocomplete="username" />
+        </div>
+        <div class="field-group" style="margin-bottom:18px;">
+          <label for="password">Password</label>
+          <input id="password" type="password" placeholder="Select a role above" autocomplete="current-password" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+      </form>
+
+      <form id="mfaStep" style="display:none;">
+        <div class="demo-box" style="margin-bottom:14px;">
+          This role requires a verification code. Demo code: <strong>123456</strong>
+        </div>
+        <div class="field-group" style="margin-bottom:18px;">
+          <label for="mfaCode">6-digit code</label>
+          <input id="mfaCode" type="text" inputmode="numeric" maxlength="6" placeholder="123456" autocomplete="one-time-code" />
+        </div>
+        <button type="submit" class="btn btn-primary btn-block">Verify and continue</button>
+        <button type="button" class="btn btn-ghost btn-block" id="mfaBack" style="margin-top:10px;">Back</button>
+      </form>
+
+      <p class="auth-footer-link">Need access instead? <a href="signup.html">Request an account</a></p>
+    </section>
+  </div>
+</main>
+
+<script src="js/data.js"></script>
+<script src="js/icons.js"></script>
+<script src="js/theme.js"></script>
+<script src="js/auth.js"></script>
+<script src="js/login.js"></script>
+</body>
+</html>
